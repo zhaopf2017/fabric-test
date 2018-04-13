@@ -183,8 +183,30 @@ driver=ctlr root@pte-driver2	ctlrInputs/pteHost11-samplecc-i.sh
    2，test_driver.sh
    
    存放在PTE/CITest/scripts目录下，这个文件是远程调用的核心。接收到参数是测试用例的编号及起始的时间戳。
+
+    ./test_driver.sh [opt] [values]"
    
-   3,pte_mgr.sh
+       -e: install sdk packages, default=no"
+   
+       -n: create network, default=no"
+   
+       -m: directory where test_nl.sh, preconfig, chaincode to be used to create network, default=scripts"
+   
+       -p: preconfigure creation/join channels, default=no"
+   
+       -s: synchup peer ledgers, recommended when network brought up, default=no"
+   
+       -c: chaincode to be installed and instantiated [all|chaincode], default=no"
+   
+       -t [value1 value2 value3 ...]: test cases to be executed"
+   
+       -b [value]: test cases starting time"
+       
+   我们需要在fabric—network上将这个网络起来，而不用制定-t参数
+   
+   在PTE引擎主机上，不要创建网络，不要对通道进行操作。
+   
+   3,pte_mgr.sh
    在PTE目录下
 
 
