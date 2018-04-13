@@ -27,3 +27,4 @@ fabric-sdk-node也需要下载相关的代码。
 vi /etc/exports
 加入如下内容：
 /opt/cryptogen	*(rw,sync,no_subtree_check)
+
