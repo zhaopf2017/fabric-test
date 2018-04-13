@@ -126,6 +126,8 @@ driver=ctlr root@pte-driver2	ctlrInputs/pteHost11-samplecc-i.sh
 
 1，networkLanch.sh
 
+该文件位于fabric-test/tools/NL目录中，可以启动或者停止fabric网络。
+
 ./networkLauncher.sh [opt] [value]
  
     -a: network action [up|down], default=up
@@ -177,6 +179,13 @@ driver=ctlr root@pte-driver2	ctlrInputs/pteHost11-samplecc-i.sh
    ./networkLauncher.sh -o 3 -x 2 -r 2 -p 2 -k 4 -z 3 -n 2 -t kafka -f test -w localhost -S enabled -l INFO -B 500
    
    也就是三个orderer，两个ca，两个组织机构，每个组织默认peer个数为2，kafka为4个，zookeeper为3个，共识模式为kafka,区块默认高度500.
+   
+   2，test_driver.sh
+   
+   存放在PTE/CITest/scripts目录下，这个文件是远程调用的核心。接收到参数是测试用例的编号及起始的时间戳。
+   
+   3,pte_mgr.sh
+   在PTE目录下
 
 
  
