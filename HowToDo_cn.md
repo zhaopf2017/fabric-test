@@ -2,19 +2,23 @@
 
 一，搭建fabric-test的运行环境。
 
-0，安装docker，安装curl，安装docker-compose
+1，安装docker，安装curl，安装docker-compose
 
-1，下载fabric-test源代码。
+2，下载fabric-test源代码。
 
 git clone https://github.com/hyperledger/fabric-test.git
 
-2，fabric-test目录中有若干个关联项目，fabric,fabric-sdk-node,fabric-ca
+3，fabric-test目录中有若干个关联项目，fabric,fabric-sdk-node,fabric-ca
 
 fabric目录需要通过git的项目关联，下载下来相应的代码。
 
 fabric-sdk-node也需要下载相关的代码。
 
-3，执行pre_setup.sh，安装nodejs及nvm。
+4，执行pre_setup.sh，安装nodejs及nvm。
+
+5，复制fabric-test/tools/PTE及NL到fabric-test/fabric-sdk-node/test目录。
+
+6，在fabric-test/fabric-sdk-node中进行npm install，安装依赖包。
 
 
 二，测试系统部署
@@ -71,4 +75,9 @@ mount -t nfs fabric_network:/opt/cryptogen cryptogen
 五，配置服务器之间的免密码登陆
 
 ssh-copy-id user@fabric_server
+
+登陆后，sudo到root用户，cat /home/user/.ssh/authorized_keys >>/root/.ssh/authorized_keys
+
+同理，实现pte_controller到pte_driver1和pte_driver2的免密码登陆。因为要远程操作这两个节点。
+
 
