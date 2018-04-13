@@ -18,7 +18,9 @@ fabric-sdk-node也需要下载相关的代码。
 
 
 二，测试系统部署
+
 PTE测试：性能测试
+
 172.16.10.120     fabric_network 运行一个fabric网络（可以networkLanch.sh定制网络拓扑）
 
 172.16.10.78      pte_driver1
