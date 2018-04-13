@@ -123,9 +123,62 @@ driver=ctlr root@pte-driver2	ctlrInputs/pteHost11-samplecc-i.sh
 
 
 七，核心文件说明
+
 1，networkLanch.sh
- ./networkLauncher.sh [opt] [value] 
+
+./networkLauncher.sh [opt] [value]
  
+    -a: network action [up|down], default=up
+ 
+    -x: number of ca, default=0
+    
+    -d: ledger database type, default=goleveldb
+    
+    -f: profile string, default=test
+    
+    -h: hash type, default=SHA2
+    
+    -k: number of kafka, default=0
+    
+    -z: number of zookeepers, default=0
+    
+    -n: number of channels, default=1
+    
+    -o: number of orderers, default=1
+    
+    -p: number of peers per organization, default=1
+    
+    -r: number of organizations, default=1
+    
+    -s: security type, default=256
+    
+    -t: ledger orderer service type [solo|kafka], default=solo
+    
+    -w: host ip, default=0.0.0.0
+    
+    -l: core logging level [CRITICAL|ERROR|WARNING|NOTICE|INFO|DEBUG], default=ERROR
+    
+    -q: orderer logging level [CRITICAL|ERROR|WARNING|NOTICE|INFO|DEBUG], default=ERROR
+    
+    -c: batch timeout, default=2s
+    
+    -B: batch size, default=10
+    
+    -F: local MSP base directory, default=/opt/gopath/src/github.com/hyperledger/fabric-test/fabric/common/tools/cryptogen/
+    
+    -G: src MSP base directory, default=/opt/hyperledger/fabric/msp/crypto-config
+    
+    -S: TLS enablement [enabled|disabled], default=disabled
+    
+    -C: company name, default=example.com 
+    
+    在CITest的测试用例中默认的网络参数是:
+   
+   ./networkLauncher.sh -o 3 -x 2 -r 2 -p 2 -k 4 -z 3 -n 2 -t kafka -f test -w localhost -S enabled -l INFO -B 500
+   
+   也就是三个orderer，两个ca，两个组织机构，每个组织默认peer个数为2，kafka为4个，zookeeper为3个，共识模式为kafka,区块默认高度500.
+
+
  
  
 
