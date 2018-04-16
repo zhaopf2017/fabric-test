@@ -121,6 +121,9 @@ driver=ctlr root@pte-driver2	ctlrInputs/pteHost11-samplecc-i.sh
 将这里的FAB-3989-4i-TLS改为你要启动的那个测试用例编号
 
 
+pte-driver1上，你需要修改的是PTE/CITest/CISCFiles/config-chan*-TLS.json （两个文件），将其中的localhost指向fabric-network所在的地址。
+
+
 
 七，核心文件说明
 
@@ -206,8 +209,11 @@ driver=ctlr root@pte-driver2	ctlrInputs/pteHost11-samplecc-i.sh
    
    在PTE引擎主机上，不要创建网络，不要对通道进行操作。
    
-   3,pte_mgr.sh
-   在PTE目录下
+   3,pte_dirver.sh
+   在PTE目录下，主要根据传入参数，去做一些操作。会被pte_mgr掉用。
+   
+   4,SCFiles目录下的config文件
+   在PTE的SCFiles目录下有，在CITest/CISCFiles也有，都是用指向fabric网络的配置信息。
 
 
  
