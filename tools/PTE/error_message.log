@@ -1,0 +1,2 @@
+2018-05-03 11:45:17.107 UTC [gossip/state] queueNewMessage -> WARN 1063 Failed adding payload: Ledger height is at 2413, cannot enqueue block with sequence of 2769
+2018-05-03 11:45:17.249 UTC [kvledger] CommitWithPvtData -> INFO 1064 Channel [testorgschannel1]: Committed block [2414] with 102 transaction(s)
